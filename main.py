@@ -1,10 +1,10 @@
 from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 from typing import List
-from src.models import engine, Base, Book, Comment
 import uvicorn
-
 from sqlalchemy.orm import sessionmaker
+
+from src.models import engine, Base, Book, Comment
 from src.schemas import BookCreate, BookRead, CommentCreate, CommentRead
 
 
