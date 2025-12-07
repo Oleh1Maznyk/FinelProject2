@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 from typing import List
 from src.models import engine, Base, Book, Comment
+import uvicorn
+
 from sqlalchemy.orm import sessionmaker
 from src.schemas import BookCreate, BookRead, CommentCreate, CommentRead
 
@@ -91,5 +93,4 @@ def get_all_comments(db: Session = Depends(get_db)):
 
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
